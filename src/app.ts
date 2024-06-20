@@ -1,5 +1,6 @@
 import express from "express";
 import BaseController from "./controllers/base.controller";
+import { notFoundHandler } from "./middlewares/not.found.handler";
 
 const Router = express.Router;
 
@@ -10,6 +11,7 @@ export default class App {
     this.app = express();
 
     this.initControllers(controllers);
+    this.initNotFoundHandler();
   }
 
   listen() {
@@ -33,5 +35,9 @@ export default class App {
     }
 
     this.app.use("/", router);
+  }
+
+  initNotFoundHandler() {
+    this.app.use(notFoundHandler);
   }
 }
