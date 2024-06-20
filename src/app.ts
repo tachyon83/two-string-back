@@ -1,6 +1,7 @@
 import express, { Application, Router } from "express";
 import BaseController from "./controllers/base.controller";
 import { notFoundHandler } from "./middlewares/not.found.handler";
+import cors from "cors";
 
 export default class App {
   app: Application;
@@ -8,6 +9,7 @@ export default class App {
   constructor(controllers: BaseController[]) {
     this.app = express();
 
+    this.initMiddlewares();
     this.initControllers(controllers);
     this.initNotFoundHandler();
   }
@@ -21,6 +23,12 @@ export default class App {
 
   getServer() {
     return this.app;
+  }
+
+  initMiddlewares() {
+    this.app.use(
+      cors({ origin: true, credentials: true, preflightContinue: true })
+    );
   }
 
   initControllers(controllers?: BaseController[]) {
