@@ -1,11 +1,9 @@
-import express from "express";
+import express, { Application, Router } from "express";
 import BaseController from "./controllers/base.controller";
 import { notFoundHandler } from "./middlewares/not.found.handler";
 
-const Router = express.Router;
-
 export default class App {
-  app;
+  app: Application;
 
   constructor(controllers: BaseController[]) {
     this.app = express();
