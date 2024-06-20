@@ -26,6 +26,7 @@ export default class App {
   }
 
   initMiddlewares() {
+    this.app.use(express.json());
     this.app.use(
       cors({ origin: true, credentials: true, preflightContinue: true })
     );
