@@ -4,9 +4,9 @@ export function commonSequenceTableMaker(
 ): number[][] {
   const str1len = str1.length;
   const str2len = str2.length;
-  const cst2dArr = new Array(str1len + 1).map((_) =>
-    new Array(str2len + 1).fill(0)
-  );
+  const cst2dArr = new Array(str1len + 1)
+    .fill(0)
+    .map((_) => new Array(str2len + 1).fill(0));
 
   console.log(11, str1len);
   console.log(12, str2len);
