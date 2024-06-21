@@ -37,7 +37,7 @@ export function commonSequenceIndexFinder(cst2dArr: number[][]): {
         str1arr.push(i - 1);
         str2arr.push(j - 1);
         k++;
-        if (k > str2len) break;
+        break;
       }
     }
     if (k > str2len) break;
