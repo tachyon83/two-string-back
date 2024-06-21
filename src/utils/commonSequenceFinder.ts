@@ -40,6 +40,7 @@ export function commonSequenceIndexFinder(str2dArr: number[][]): {
         if (k > str2len) break;
       }
     }
+    if (k > str2len) break;
   }
 
   return { str1arr, str2arr };
