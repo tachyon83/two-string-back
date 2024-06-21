@@ -19,21 +19,21 @@ export function commonSequenceTableMaker(
   return cst2dArr;
 }
 
-export function commonSequenceIndexFinder(str2dArr: number[][]): {
+export function commonSequenceIndexFinder(cst2dArr: number[][]): {
   str1arr: number[];
   str2arr: number[];
 } {
   const str1arr = [];
   const str2arr = [];
 
-  const str1len = str2dArr.length;
-  const str2len = str2dArr[0].length;
+  const str1len = cst2dArr.length;
+  const str2len = cst2dArr[0].length;
 
   let k = 1;
 
   for (let i = 1; i <= str1len; ++i) {
     for (let j = k; j <= str2len; ++j) {
-      if (str2dArr[i][j] > 0) {
+      if (cst2dArr[i][j] > 0) {
         str1arr.push(i - 1);
         str2arr.push(j - 1);
         k++;
