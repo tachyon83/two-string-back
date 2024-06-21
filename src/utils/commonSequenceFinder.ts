@@ -8,14 +8,6 @@ export function commonSequenceTableMaker(
     .fill(0)
     .map((_) => new Array(str2len + 1).fill(0));
 
-  console.log(11, str1len);
-  console.log(12, str2len);
-  console.log();
-
-  console.log(15, str1);
-  console.log(16, str2);
-  console.log();
-
   for (let i = 0; i < str1len; ++i) {
     for (let j = 0; j < str2len; ++j) {
       if (str1[i] === str2[j]) {
@@ -42,9 +34,10 @@ export function commonSequenceIndexFinder(str2dArr: number[][]): {
   for (let i = 1; i <= str1len; ++i) {
     for (let j = k; j <= str2len; ++j) {
       if (str2dArr[i][j] > 0) {
-        str1arr.push(i);
-        str2arr.push(j);
+        str1arr.push(i - 1);
+        str2arr.push(j - 1);
         k++;
+        if (k > str2len) break;
       }
     }
   }
