@@ -7,6 +7,15 @@ export function commonSequenceTableMaker(
   const cst2dArr = new Array(str1len + 1).map((_) =>
     new Array(str2len + 1).fill(0)
   );
+
+  console.log(11, str1len);
+  console.log(12, str2len);
+  console.log();
+
+  console.log(15, str1);
+  console.log(16, str2);
+  console.log();
+
   for (let i = 0; i < str1len; ++i) {
     for (let j = 0; j < str2len; ++j) {
       if (str1[i] === str2[j]) {

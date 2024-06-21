@@ -22,6 +22,10 @@ export default class StringController extends BaseController {
   }
 
   compare = async (req: express.Request, res: express.Response) => {
+    console.log(25, req.body.str1);
+    console.log(26, req.body.str2);
+    console.log();
+
     return this.service.compare(req.body.str1, req.body.str2);
   };
 }
